@@ -13,7 +13,7 @@ func ValidateCard(card models.CardDetails) (bool, string, error) {
 
 	cardCompany := getCardCompany(card.CardNumber)
 	if cardCompany == "Unknown" {
-		return false, "", errors.New("Unknown card issuer")
+		return true, "Unknown card issuer", nil
 	}
 
 	return true, cardCompany, nil
